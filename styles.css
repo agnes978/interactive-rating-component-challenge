@@ -1,0 +1,217 @@
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/**** Variables ****/
+:root {
+    /*** Colors ***/
+    --clr-primary: hsl(25, 97%, 53%); /* Orange */
+
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-light: hsl(217, 12%, 63%);
+    --clr-grey: hsl(216, 12%, 54%);
+    --clr-grayish-blue: hsl(213, 19%, 18%);
+    --clr-blue: hsl(210, 19%, 15%);
+    --clr-dark-blue: hsl(216, 12%, 8%);
+
+    /*** Fonts ***/
+    --fs-400: 15px;
+    --ff-primary: Overpass, "sans serif";
+    --fw-normal: 400;
+    --fw-bold: 700;
+}
+
+/**** General Styles ****/
+html {
+    font-size: var(--fs-400);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: 1rem;
+    font-weight: var(--fw-normal);
+    line-height: 1.5;
+    color: var(--clr-grey);
+    background-color: var(--clr-dark-blue);
+}
+
+h1,
+.h1-like {
+    margin: .3em 0;
+    font-size: 1.6rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-white);
+}
+
+p {
+    margin: 1em 0;
+}
+
+.txt-align-center {
+    text-align: center; 
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+.star-icon {
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.thankyou-img {
+    margin-top: 1em;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+.attribution { 
+    font-size: .6875rem; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/**** Rating Component ****/
+/*** Card ***/
+.card {
+    position: relative; /* can't have a z-index on a default static position */
+    z-index: 20;
+    opacity: 1;
+    width: 380px;
+    padding: 1.9em;
+    margin: 1em;
+    border-radius: 1.9em;
+    background-color: var(--clr-blue);
+    transform: translateX(0);
+    transition: transform .8s ease-in-out,
+                opacity .3s ease-in;
+}
+
+.is-hidden {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10; /* to avoid overlap, z-index change whereas .card is hidden or not. */
+    transform: translateX(-200px);
+}
+
+.rating-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 0;
+    margin: 1.5em 0 1.3em;
+    list-style: none;
+}
+
+.rating-item {
+    position: relative; /* needed to position labels relatively to .rating-items */
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+} 
+
+.rating {
+    appearance: none;  
+    border: none;
+    margin: 0;
+}
+
+.has-round-bg {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: var(--clr-grayish-blue);
+}
+
+.rating-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--clr-light);
+}
+
+.rating:focus + label,
+.rating:hover + label,
+.rating:checked + label {
+    font-weight: var(--fw-bold);
+    color: var(--clr-white);
+}
+
+.rating:hover {
+    background-color: var(--clr-primary);
+    transition: background-color .3s ease-in-out;
+}
+
+.rating:hover,
+.rating-label:hover {
+    cursor: pointer;
+}
+
+.rating:checked {
+    background-color: var(--clr-grey);
+}
+
+/***
+* indicate to the user that a   
+* checked item can not be clicked.
+**/
+/* 
+.rating:checked:hover {
+    cursor: not-allowed;
+} 
+*/
+
+.card-subtitle {
+    margin: .3em 0 .5em;
+}
+
+#rating-result {
+    display: inline-block;
+    padding: 0.4em 1.5em;
+    margin-top: 1.5em;
+    border-radius: 1em;
+    color: var(--clr-primary);
+    background-color: var(--clr-grayish-blue);
+}
+
+/*** Button ***/
+.btn {
+    width: 100%;
+    padding: .7em 0;
+    border: none;
+    border-radius: 1.5em;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    color: var(--clr-white);
+    background-color: var(--clr-primary);
+    transition: background-color .3s ease-in-out,
+                color .3s ease-in-out;
+}
+
+.btn:hover {
+    color: var(--clr-primary);
+    background-color: var(--clr-white);
+    cursor: pointer;
+}
