@@ -3,7 +3,7 @@
 This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI).
 
 ## Table of contents
-as In
+
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
@@ -32,14 +32,14 @@ Users should be able to:
 ### Links
 
 - Solution URL: [on Github](https://github.com/agnes978/interactive-rating-component-challenge/)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://agnes978.github.io/interactive-rating-component-challenge/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS
 - Flexbox
 - Vanilla JS 
 
@@ -63,7 +63,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- Website - [Radio button Javascript tutorial](https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/)
+- [Radio button Javascript tutorial](https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/)
 
 ## Author
 
